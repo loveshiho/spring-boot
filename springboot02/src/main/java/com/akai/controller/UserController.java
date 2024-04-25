@@ -10,14 +10,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 @Controller
+@RequestMapping("/user")
 public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("/findAllUser")
+    @RequestMapping("/findAll")
     @ResponseBody
-    public List<User> findAllUser() {
-        List<User> users = userService.findAllUser();
+    public List<User> findAll() {
+        List<User> users = userService.findAll();
         return users;
     }
 }
