@@ -1,4 +1,13 @@
 server:
-  port: 8091
+  port: 8080
   servlet:
     context-path: /shiho
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/db_01?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: zt20040801.
+mybatis:
+  type-aliases-package: com.akai.pojo
+  mapper-locations: classpath:mybatis/*.xml
