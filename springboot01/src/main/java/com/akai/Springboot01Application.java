@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 // 可以自动扫描当前类所在包及子包的注解
 // 注意：此类要放入到包中和 controller包同一个层次即可
 @SpringBootApplication
-public class Application {
+public class Springboot01Application {
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(Springboot01Application.class, args);
     }
 }
