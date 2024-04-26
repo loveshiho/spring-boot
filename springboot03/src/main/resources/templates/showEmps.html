@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #empTable {
+            width: 80%;
+            border: 1px solid blue;
+            margin: 0px auto;
+        }
+
+        #empTable th, td {
+            border: 1px solid green;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+展示单个员工信息:
+<span th:if="${emp}!=null">
+        工号:<span th:text="${emp.empno}"></span><br/>
+        姓名:<span th:text="${emp.ename}"></span><br/>
+        职务:<span th:text="${emp.job}"></span><br/>
+        上级:<span th:text="${emp.mgr}"></span><br/>
+        入职日期:<span th:text="${emp.hiredate}"></span><br/>
+        工资:<span th:text="${emp.sal}"></span><br/>
+        补助:<span th:text="${emp.comm}"></span><br/>
+        部门号:<span th:text="${emp.deptno}"></span><br/>
+    </span>
+<hr/>
+<span th:if="${emps} != null and ${emps.size()} > 0">
+        工号:<span th:text="${emps[0].empno}"></span><br/>
+        姓名:<span th:text="${emps[0].ename}"></span><br/>
+        职务:<span th:text="${emps[0].job}"></span><br/>
+        上级:<span th:text="${emps[0].mgr}"></span><br/>
+        入职日期:<span th:text="${emps[0].hiredate}"></span><br/>
+        工资:<span th:text="${emps[0].sal}"></span><br/>
+        补助:<span th:text="${emps[0].comm}"></span><br/>
+        部门号:<span th:text="${emps[0].deptno}"></span><br/>
+    </span>
+<table id="empTable" cellpadding="0px" cellspacing="0px">
+    <tr>
+        <th>索引</th>
+        <th>序号</th>
+        <th>总人数</th>
+        <th>偶数索引?</th>
+        <th>奇数索引?</th>
+        <th>第一?</th>
+        <th>最后?</th>
+        <th>工号</th>
+        <th>姓名</th>
+        <th>职务</th>
+        <th>上级</th>
+        <th>入职日期</th>
+        <th>工资</th>
+        <th>补助</th>
+        <th>部门号</th>
+        <th>删除</th>
+    </tr>
+    <tr th:each="emp,i:${emps}">
+        <td th:text="${i.index}"></td>
+        <td th:text="${i.count}"></td>
+        <td th:text="${i.size}"></td>
+        <td th:text="${i.odd}"></td>
+        <td th:text="${i.even}"></td>
+        <td th:text="${i.first}"></td>
+        <td th:text="${i.last}"></td>
+        <td th:text="${emp.empno}"></td>
+        <td th:text="${emp.ename}"></td>
+        <td th:text="${emp.job}"></td>
+        <td th:text="${emp.mgr} == null ? 无 : ${emp.mgr}"></td>
+        <td th:text="${emp.hiredate}"></td>
+        <td th:text="${emp.sal}"></td>
+        <td th:text="${emp.comm} == null ? 0 : ${emp.comm}"></td>
+        <td th:text="${emp.deptno}"></td>
+        <td>
+            <a th:href="@{removeEmp(empno=${emp.empno})}">删除</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
