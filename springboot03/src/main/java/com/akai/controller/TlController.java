@@ -24,7 +24,7 @@ public class TlController {
 
     @RequestMapping("/showEmps")
     public String showEmps(Map<String, Object> model) {
-
+        int i = 1 / 0;
         List<Emp> all = empService.findAll();
         model.put("emps", all);
         model.put("emp", all.get(0));
