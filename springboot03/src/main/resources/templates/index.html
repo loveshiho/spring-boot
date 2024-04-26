@@ -13,5 +13,14 @@
     <hr/>
     <input th:value="msg"/>
     <input th:value="${msg}">
+    <hr/>
+    <span>
+        req:<br>
+        <span th:text="${msg}"></span><br>
+        session:<br>
+        <span th:text="${session.msg}"></span><br>
+        app:<br>
+        <span th:text="${application.msg}"></span><br>
+    </span>
 </body>
 </html>

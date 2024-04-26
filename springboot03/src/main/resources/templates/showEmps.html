@@ -53,6 +53,9 @@
         <th>职务</th>
         <th>上级</th>
         <th>入职日期</th>
+        <th>入职年</th>
+        <th>入职月</th>
+        <th>入职日</th>
         <th>工资</th>
         <th>补助</th>
         <th>部门号</th>
@@ -69,8 +72,11 @@
         <td th:text="${emp.empno}"></td>
         <td th:text="${emp.ename}"></td>
         <td th:text="${emp.job}"></td>
-        <td th:text="${emp.mgr} == null ? 无 : ${emp.mgr}"></td>
-        <td th:text="${emp.hiredate}"></td>
+        <td th:text="${#strings.isEmpty(emp.mgr)} ? 无 : ${emp.mgr}"></td>
+        <td th:text="${#dates.format(emp.hiredate, 'yyyy-MM-dd')}"></td>
+        <td th:text="${#dates.year(emp.hiredate)}"></td>
+        <td th:text="${#dates.month(emp.hiredate)}"></td>
+        <td th:text="${#dates.day(emp.hiredate)}"></td>
         <td th:text="${emp.sal}"></td>
         <td th:text="${emp.comm} == null ? 0 : ${emp.comm}"></td>
         <td th:text="${emp.deptno}"></td>
