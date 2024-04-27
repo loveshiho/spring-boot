@@ -6,7 +6,7 @@ import org.junit.jupiter.api.function.Executable;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
-@DisplayName("Junit5断言")
+@DisplayName("Junit4断言")
 class Springboot06ApplicationTests4 {
     @BeforeEach
     public void pre() {
