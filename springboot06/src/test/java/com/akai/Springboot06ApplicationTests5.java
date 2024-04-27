@@ -4,7 +4,7 @@ import org.junit.jupiter.api.*;
 
 import java.time.Duration;
 
-@DisplayName("Junit5断言")
+@DisplayName("Junit5前置条件")
 class Springboot06ApplicationTests5 {
     @BeforeEach
     public void pre() {
